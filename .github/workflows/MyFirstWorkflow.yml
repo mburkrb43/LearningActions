@@ -16,7 +16,7 @@ jobs:
     environment: Test
     needs: first_job
     steps:
-    - run: |
+    - run:
       echo "Hello ${{ vars.WHO_TO_GREET }}  from ${{ github.actor }}."
       sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
       echo "My secret is  '$sec'."
@@ -25,7 +25,7 @@ jobs:
     environment: Load-Test
     needs: first_job 
     steps:
-    - run: |
+    - run:
       echo "Hello ${{ vars.WHO_TO_GREET }}  from ${{ github.actor }}."
       sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
       echo "My secret is  '$sec'."
